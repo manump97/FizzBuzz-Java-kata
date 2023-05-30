@@ -25,10 +25,10 @@ public class Main {
 
     public static void main(String[] args) {
         System.out.println("--------INIT SOFTWARE---------");
-
+        AbstractFizzBuzzer modelFizzBuzz = FizzBuzzStrategy.buildStrategy(Mode.GAMMA);
         for (int number=1; number <= PRIMEROS_NUMEROS; number++) {
-            FizzBuzzer modelFizzBuzz = new FizzBuzzer(number,2); // error al quitar el mode
-            modelFizzBuzz.printInformation(true);
+            modelFizzBuzz.processNextNumber();
+            System.out.println(modelFizzBuzz.getNumber() + " --> " + modelFizzBuzz.getStatus().toString());
         }
         System.out.println("--------END SOFTWARE---------");
     }
